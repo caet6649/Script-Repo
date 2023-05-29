@@ -6,7 +6,7 @@ local Iterations = 100 --Number of terms in the Fourier Series.
 local Steps = 300
 
 function S(x) --The function to be expanded into trig sums.
-	return cos(x) * 3 + sin(2 * x) * 4
+	return math.sign(sin(x) * 5)
 end
 
 function Integral(Function, LowerBound, UpperBound, Division)
@@ -96,6 +96,7 @@ for i = 1, 1 do
 
 		Parts[Index].Position = Vector3.new(Index, Value, 0) + Vector3.yAxis * 20
 		Parts2[Index].Position = Vector3.new(Index, Approximation, 0) + Vector3.yAxis * 50
+		task.wait()
 	end
 	
 	task.wait(1 / 30)
